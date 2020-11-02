@@ -54,6 +54,7 @@ async function robot() {
         .out('-extent', `${width}x${height}`)
         .write(outputFile, (error) => {
           if (error) {
+            console.log(`> [video-robot] Erro on Image convert!`)
             return reject(error)
           }
 
