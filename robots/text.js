@@ -3,13 +3,12 @@ const algorithmiaApiKey = require('../credentials/algorithmia.json').apiKey
 const sentenceBoundaryDetection = require('sbd')
 
 const watsonApiKey = require('../credentials/watson-nlu.json').apikey
-const watsonUrl = require('../credentials/watson-nlu.json').url
 const NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
  
 const nlu = new NaturalLanguageUnderstandingV1({
   iam_apikey: watsonApiKey,
   version: '2018-04-05',
-  url: watsonUrl
+  url: 'https://gateway.watsonplatform.net/natural-language-understanding/api/'
 })
 
 const state = require('./state.js')
