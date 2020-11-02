@@ -23,6 +23,7 @@ async function robot() {
     for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++) {
       await convertImage(sentenceIndex)
     }
+    console.log('> [video-robot] All images converted!')
   }
 
   async function convertImage(sentenceIndex) {
@@ -54,6 +55,7 @@ async function robot() {
         .out('-extent', `${width}x${height}`)
         .write(outputFile, (error) => {
           if (error) {
+            console.log(`> [video-robot] Error on Image convert!`)
             return reject(error)
           }
 
